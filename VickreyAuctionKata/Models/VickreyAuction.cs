@@ -32,6 +32,11 @@ namespace VickreyAuctionKata.Models
 
             var highestBid = bids.Max(); 
 
+            if(highestBid < Item.ReservePrice)
+            {
+                throw new InvalidOperationException("No bids met the reserve price.");
+            }
+
             // Assumes only one bidder holds the highest bid (No two or more bidders have placed the same highest bid). 
             // Selects the first bidder with the highest bid as the winner.
             var winner = bidders.First(b => b.Bids!.Max() == highestBid);

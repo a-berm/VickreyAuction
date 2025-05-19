@@ -135,7 +135,7 @@ namespace VickreyAuctionKata.Tests
             };
 
             yield return new object[]
-{
+            {
             new VickreyAuction(
                 new Item { Name = "Sculpture", ReservePrice = 100 },
                 new List<Bidder>
@@ -144,7 +144,7 @@ namespace VickreyAuctionKata.Tests
                 }
             ) ,
             "At least two bidders must be provided."
-};
+            };
 
             yield return new object[]
             {
@@ -157,7 +157,21 @@ namespace VickreyAuctionKata.Tests
                 }
             ) ,
             "At least one bid must be placed."
-            };            
+            };
+
+            yield return new object[]
+            {
+            new VickreyAuction(
+                new Item { Name = "Sculpture", ReservePrice = 100 },
+                new List<Bidder>
+                {
+                    new Bidder { Name = "A", Bids = [60, 70] },
+                    new Bidder { Name = "B", Bids = [80, 90] },
+                    new Bidder { Name = "B", Bids = null },
+                }
+            ) ,
+            "No bids met the reserve price."
+            };
         }
 
         [Theory]
