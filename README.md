@@ -9,10 +9,16 @@ A Vickrey auction is a type of sealed-bid auction where the highest bidder wins 
 - **Language**: C#
 - **Framework**: .NET 8
 - **Testing**: xUnit
+- **Project type**: Console app
 
 ---
 
 ## 🚀 Getting Started
+
+### Prerequisites
+
+- .NET 8.0+
+- Visual Studio Code or Visual Studio
 
 ### Clone the Repository
 
@@ -24,7 +30,6 @@ cd VickreyAuction/VickreyAuctionKata
 ### Run the Project
 
 ```bash
-dotnest restore
 dotnet run
 ```
 
@@ -35,6 +40,7 @@ dotnet run
 ### Run All Tests
 
 ```bash
+cd VickreyAuction/VickreyAuctionKata.Tests
 dotnet test
 ```
 
